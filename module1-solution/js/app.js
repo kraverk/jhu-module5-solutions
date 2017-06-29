@@ -13,8 +13,9 @@
 			console.log('calculate...');
 			var wordsCount = wordCount($scope.text);
 
-			$scope.message = chooseMessageFor(wordsCount);
-			$scope.class   = chooseClassFor(wordsCount);
+			$scope.message      = chooseMessageFor(wordsCount);
+			$scope.messageClass = chooseClassFor(wordsCount);
+			$scope.textClass    = chooseBorderClassFor(wordsCount);
 		}
 
 		function wordCount(inputString) {
@@ -28,15 +29,21 @@
 
 		function chooseMessageFor(count) {
 			var outputString = "Too much!"
-			//console.log(count);
-			if (count == 0) { outputString = "Please enter data first"}
-			else if (count < 4) { outputString = "Enjoy!" };
+			if (count == 0) { 
+				outputString = "Please enter data first"
+			}
+			else if (count < 4) { 
+				outputString = "Enjoy!" 
+			};
 
 			return outputString;
 		}
 
+		function chooseBorderClassFor(count) {
+			return ((count == 0 ) ? "panel-danger" : "panel-success")
+		}
 		function chooseClassFor(count) {
-			return "panel " + ((count == 0 ) ? "panel-danger" : "panel-success") + " " + ((count == 0 ) ? "text-danger" : "text-success")
+			return ((count == 0 ) ? "text-danger" : "text-success")
 		}
 	}
 

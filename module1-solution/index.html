@@ -17,12 +17,13 @@
          <div class="form-group">
              <input id="lunch-menu" type="text"
              placeholder="list comma separated dishes you usually have for lunch"
-             class="form-control" ng-model="text">
+             class="form-control" ng-model="text" ng-class="textClass">
          </div>
+         <p class="text-muted">*** You can also list empty values - we DO NOT consider these items</p>
          <div class="form-group">
              <button class="btn btn-default" ng-click="displayMessage();">Check If Too Much</button>
          </div>
-         <div class="form-group message {{class}}">
+         <div class="form-group message" ng-class="messageClass">
            {{message}}
          </div>
    </div>
