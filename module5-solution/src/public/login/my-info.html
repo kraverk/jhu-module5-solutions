@@ -1,0 +1,20 @@
+<div class="container" ng-switch='login.userData'>
+
+  <div class="text-center" ng-switch-when='undefined'>
+  	  <h2 class="text-center">Not Signed Up Yet.</h2>
+      <h3><a ui-sref="public.sign-up">
+                  <span class="glyphicon glyphicon-bullhorn"></span><br class="hidden-xs"> Sign up Now! </a></h3>
+  </div>
+  <div class="text-center" ng-switch-default>
+  	<h1>Here is your profile info:</h1>
+  	<ul>
+  		<li>Name: {{login.userData.first_name}} {{login.userData.last_name}}</li>
+  		<li>E-Mail: {{login.userData.email}} </li>
+  		<li>Phone: {{login.userData.phone}} </li>
+  	</ul>
+  	
+  	<h3>And your favorite dish:</h3>
+    <menu-item menu-item="login.userData.favorite"></menu-item>
+  </div>
+	
+</div>

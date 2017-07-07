@@ -1,0 +1,15 @@
+<form name="SubmitForm" novalidate>
+
+	<form-field id='first-name-input' example= '"John"'         data= '$ctrl.userData.first_name' label= '"First name"' ></form-field>
+	<form-field id='last-name-input'  example= '"Smith"'        data= '$ctrl.userData.last_name'  label= '"Last name"'  ></form-field>
+	<form-field id='email-input'      example= '"foo@bar.com"'  data= '$ctrl.userData.email'      label= '"E-mail"'     validation= '"(.+)@(.+)\\.(.+)"'></form-field>
+	<form-field id='phone-input'      example= '"123-456-7890"' data= '$ctrl.userData.phone'      label= '"Phone"'      validation= '"(\\d{3})-(\\d{3})-(\\d{4})"'></form-field>
+	<form-field id='short-name-input' example= ''               data= '$ctrl.userData.dish'       label= '"Favorite"'   nonreq=true ></form-field>
+    <div class="form-group row">
+	  <div class="col-md-12 col-sm-12 col-xs-12 col-xxs-12 text-center">
+	  	<button ng-disabled="SubmitForm.$invalid" class="btn btn-default" ng-click="$ctrl.signup()" > Sign Up! </button>
+	  </div>
+	</div>
+	<div ng-show="$ctrl.result" ng-class="$ctrl.result.class" class="alert" role="alert"> 
+	<strong>{{$ctrl.result.header}}</strong> {{$ctrl.result.message}} 
+</form>
