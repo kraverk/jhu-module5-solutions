@@ -7,14 +7,19 @@
   </div>
   <div class="text-center" ng-switch-default>
   	<h1>Here is your profile info:</h1>
-  	<ul>
+  	<ul class="nav nav-pills nav-stacked">
   		<li>Name: {{login.userData.first_name}} {{login.userData.last_name}}</li>
   		<li>E-Mail: {{login.userData.email}} </li>
   		<li>Phone: {{login.userData.phone}} </li>
   	</ul>
   	
   	<h3>And your favorite dish:</h3>
-    <menu-item menu-item="login.userData.favorite"></menu-item>
+    <div class="row">
+        <div class="col-md-3">      </div>
+
+
+        <menu-item menu-item="login.userData.favorite"></menu-item>
+    </div>
   </div>
 	
 </div>
